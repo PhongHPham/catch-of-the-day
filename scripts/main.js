@@ -4,7 +4,6 @@ var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route; 
-var Navigation = ReactRouter.Navigation;
 var History = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 
@@ -36,7 +35,7 @@ var App = React.createClass({
   renderFish: function(key) {
     return <Fish key={key} index={key} details={this.state.fishes[key]} />
   },
-  render : function() {
+  render: function() {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
@@ -52,11 +51,15 @@ var App = React.createClass({
   }
 });
 
+/*
+  Fish
+  <Fish />
+*/
 var Fish = React.createClass({
   render: function() {
     var details = this.props.details;
     return (
-      <li class="menu-fish">
+      <li className="menu-fish">
         <img src={details.image} alt={details.name} />
         <h3 className="fish-name">
           {details.name}
